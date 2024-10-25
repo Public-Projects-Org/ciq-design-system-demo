@@ -54,7 +54,7 @@ type Story = StoryObj<typeof SocialCard>;
 
 export const InstagramImage: Story = {
     args: {
-        imageUrl: '/racing-cars2.png',
+        imageUrl: '/images/racing-cars2.png',
         accountName: 'Account Name',
         socialNetwork: 'instagram',
         postType: 'image',
@@ -66,7 +66,7 @@ export const InstagramImage: Story = {
 
 export const InstagramReel: Story = {
     args: {
-        imageUrl: '/racing-cars2.png',
+        imageUrl: '/images/racing-cars2.png',
         accountName: 'Reels Account',
         socialNetwork: 'instagram',
         postType: 'reel',
@@ -79,7 +79,7 @@ export const InstagramReel: Story = {
 
 export const FacebookVideo: Story = {
     args: {
-        imageUrl: '/racing-cars2.png',
+        imageUrl: '/images/racing-cars2.png',
         accountName: 'Facebook Page',
         socialNetwork: 'facebook',
         postType: 'video',
@@ -92,7 +92,7 @@ export const FacebookVideo: Story = {
 
 export const YouTubeVideo: Story = {
     args: {
-        imageUrl: '/racing-cars2.png',
+        imageUrl: '/images/racing-cars2.png',
         accountName: 'YouTube Channel',
         socialNetwork: 'youtube',
         postType: 'video',
@@ -105,7 +105,7 @@ export const YouTubeVideo: Story = {
 
 export const TikTokVideo: Story = {
     args: {
-        imageUrl: '/racing-cars2.png',
+        imageUrl: '/images/racing-cars2.png',
         accountName: 'TikTok Creator',
         socialNetwork: 'tiktok',
         postType: 'video',
@@ -118,7 +118,7 @@ export const TikTokVideo: Story = {
 
 export const HighEngagement: Story = {
     args: {
-        imageUrl: '/racing-cars2.png',
+        imageUrl: '/images/racing-cars2.png',
         accountName: 'Viral Account',
         socialNetwork: 'instagram',
         postType: 'reel',
@@ -131,7 +131,7 @@ export const HighEngagement: Story = {
 
 export const Wide: Story = {
     args: {
-        imageUrl: '/racing-cars2.png',
+        imageUrl: '/images/racing-cars2.png',
         accountName: 'Wide Layout',
         socialNetwork: 'instagram',
         postType: 'image',

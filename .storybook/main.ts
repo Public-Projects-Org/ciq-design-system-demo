@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import { mergeConfig } from 'vite';
+import path from 'path';
 
 const config: StorybookConfig = {
     stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -14,13 +16,23 @@ const config: StorybookConfig = {
     docs: {
         autodocs: "tag",
     },
-    // Add core configurations
     core: {
         disableTelemetry: true,
     },
-    refs: {
-        // Optional: Add references to other Storybooks if you have them
-    }
+    staticDirs: ['../public'],
+    async viteFinal(config) {
+        return mergeConfig(config, {
+            resolve: {
+                alias: {
+                    '@': path.resolve(__dirname, '../src'),
+                },
+            },
+            build: {
+                assetsDir: 'assets',
+                copyPublicDir: true,
+            }
+        });
+    },
 };
 
 export default config;

@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required for git history
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,10 +29,21 @@ jobs:
           npm ci
           npx playwright install --with-deps
 
+      - name: Verify public directory
+        run: |
+          ls -la public/images || (mkdir -p public/images && echo "Created public/images directory")
+
       - name: Build Storybook
         run: npm run build-storybook
         env:
           NODE_OPTIONS: --max-old-space-size=4096
+
+      - name: Verify build output
+        run: |
+          echo "Checking build output..."
+          ls -la storybook-static
+          echo "Checking for images..."
+          find storybook-static -type f -name "*.png"
 
       - name: Publish to Chromatic
         uses: chromaui/action@v1
@@ -41,9 +52,3 @@ jobs:
           storybookBuildDir: storybook-static
           exitOnceUploaded: true
           exitZeroOnChanges: true
-          onlyChanged: true
-          untraced: |
-            *.md
-            CHANGELOG.md
-            *.log
-            src/assets/**
