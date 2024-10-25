@@ -41,6 +41,7 @@ jobs:
           storybookBuildDir: storybook-static
           exitOnceUploaded: true
           exitZeroOnChanges: true
+          onlyChanged: true
           untraced: |
             *.md
             CHANGELOG.md
