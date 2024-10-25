@@ -14,6 +14,10 @@ const config: StorybookConfig = {
     docs: {
         autodocs: "tag",
     },
+    // Add core configurations
+    core: {
+        disableTelemetry: true,
+    },
     refs: {
         // Optional: Add references to other Storybooks if you have them
     },
