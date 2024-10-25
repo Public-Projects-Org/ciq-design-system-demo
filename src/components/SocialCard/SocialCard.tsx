@@ -10,6 +10,9 @@ import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import VerifiedIcon from '@mui/icons-material/Verified';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+
 
 export type SocialNetwork = 'instagram' | 'facebook' | 'youtube' | 'tiktok';
 export type PostType = 'image' | 'video' | 'reel';
@@ -25,6 +28,8 @@ export interface SocialCardProps {
     imageAlt?: string;
     width?: number | string;
     onClick?: () => void;
+    isVerified?: boolean;
+    isBusinessAccount?: boolean;
 }
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -128,7 +133,10 @@ export const SocialCard: React.FC<SocialCardProps> = ({
                                                           views = 0,
                                                           imageAlt = "Social media post",
                                                           width = 360,
+                                                          isVerified = false,
+                                                          isBusinessAccount = false,
                                                           onClick,
+
                                                       }) => {
     return (
         <StyledCard sx={{ width, position: 'relative' }} onClick={onClick}>
@@ -149,6 +157,8 @@ export const SocialCard: React.FC<SocialCardProps> = ({
                 <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>
                     {accountName}
                 </Typography>
+                {socialNetwork === 'instagram' && isVerified && <VerifiedIcon data-testid="VerifiedIcon" />}
+                {socialNetwork === 'instagram' && isBusinessAccount && <BusinessCenterIcon data-testid="BusinessIcon" />}
             </TopBar>
 
             <PostTypeIcon>
