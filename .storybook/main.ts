@@ -20,8 +20,7 @@ const config: StorybookConfig = {
     },
     refs: {
         // Optional: Add references to other Storybooks if you have them
-    },
-    staticDirs: ['../public'], // Optional: Configure static files directory
+    }
 };
 
 export default config;
