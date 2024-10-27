@@ -10,6 +10,8 @@ describe('SocialCard', () => {
         likes: 1000,
         comments: 50,
         width: 360,
+        isVerified: true,
+        isBusinessAccount: true,
     } as const;
 
     beforeEach(() => {
@@ -23,6 +25,8 @@ describe('SocialCard', () => {
         cy.contains('Test Account').should('be.visible');
         cy.get('svg[data-testid="InstagramIcon"]').should('exist');
         cy.get('svg[data-testid="ImageIcon"]').should('exist');
+        cy.get('svg[data-testid="VerifiedIcon"]').should('exist');
+        cy.get('svg[data-testid="BusinessIcon"]').should('exist');
     });
 
     it('formats numbers correctly', () => {

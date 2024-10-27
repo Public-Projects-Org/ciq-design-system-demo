@@ -46,6 +46,14 @@ const meta = {
             control: 'number',
             description: 'Width of the card in pixels',
         },
+        isVerified: {
+            control: 'boolean',
+            description: 'Is the account verified',
+        },
+        isBusinessAccount: {
+            control: 'boolean',
+            description: 'Is the account a business account',
+        },
     },
 } satisfies Meta<typeof SocialCard>;
 
@@ -61,6 +69,8 @@ export const InstagramImage: Story = {
         likes: 3900,
         comments: 17,
         width: 360,
+        isVerified: true,
+        isBusinessAccount: true,
     },
 };
 
